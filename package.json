@@ -1,0 +1,36 @@
+{
+  "name": "leaflet-color-cache-tile",
+  "version": "0.0.1",
+  "description": "leaflet二维瓦片获取并动态改变整体配色方案，并加入持续缓存方案来避免重复请求处理。",
+  "scripts": {
+    "dev": "vite",
+    "build:map": "microbundle watch",
+    "build": "microbundle"
+  },
+  "keywords": [
+    "leaflet",
+    "leaflet-color-cache",
+    "canvas",
+    "typescript"
+  ],
+  "type": "module",
+  "source": "src/index.ts",
+  "main": "dist/leaflet-color-cache-tile.cjs",
+  "unpkg": "dist/leaflet-color-cache-tile.umd.js",
+  "module": "dist/leaflet-color-cache-tile.module.js",
+  "types": "dist/leaflet-color-cache-tile.d.ts",
+  "author": "wang k",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/leaflet": "^1.9.0",
+    "microbundle": "^0.15.1",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.2"
+  },
+  "dependencies": {
+    "idb-keyval": "^6.2.0"
+  },
+  "peerDependencies": {
+    "leaflet": ">=1.0.0"
+  }
+}
