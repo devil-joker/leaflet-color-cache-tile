@@ -21,6 +21,9 @@
   "types": "dist/leaflet-color-cache-tile.d.ts",
   "author": "wang k",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@types/leaflet": "^1.9.0",
     "microbundle": "^0.15.1",
