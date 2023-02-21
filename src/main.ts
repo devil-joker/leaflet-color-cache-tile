@@ -105,26 +105,26 @@ const ColorCacheTile = L.TileLayer.extend({
     }
     return tile;
   },
-  _colorize(img: HTMLImageElement, coordsName: string) {
-    if (img.getAttribute('color-cache-loaded')) {
-      img.hidden = false;
+  _colorize(tileImage: HTMLImageElement, coordsName: string) {
+    if (tileImage.getAttribute('color-cache-loaded')) {
+      tileImage.hidden = false;
       return;
     } else {
-      img.hidden = true;
+      tileImage.hidden = true;
     }
-    let _img = img;
-    let newImg = new Image();
-    newImg.crossOrigin = 'Anonymous';
-    newImg.src = _img.src;
-    newImg.onload = () => {
+    let _tileImage = tileImage;
+    let newTileImage = new Image();
+    newTileImage.crossOrigin = 'Anonymous';
+    newTileImage.src = _img.src;
+    newTileImage.onload = () => {
       let canvas = document.createElement('canvas');
 
-      canvas.width = newImg.width;
-      canvas.height = newImg.height;
+      canvas.width = newTileImage.width;
+      canvas.height = newTileImage.height;
 
       let ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
-      ctx.drawImage(newImg, 0, 0);
+      ctx.drawImage(newTileImage, 0, 0);
 
       let imageData: ImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
