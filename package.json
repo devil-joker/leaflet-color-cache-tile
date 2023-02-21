@@ -7,6 +7,10 @@
     "build:map": "microbundle watch",
     "build": "microbundle"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devil-joker/leaflet-color-cache-tile"
+  },
   "keywords": [
     "leaflet",
     "leaflet-color-cache",
