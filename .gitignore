@@ -1,6 +1,6 @@
 /lib
-/dist
-/release
+# /dist
+# /release
 
 # Logs
 logs

@@ -10,14 +10,14 @@ export default class CacheTile {
 
   private name = 'cache_tile_name';
 
-  private overdue = false;
+  private overdue: number | boolean | undefined;
 
   /**
    *
    * @param {string} name 储存某一类的数据名称
    * @param {number | boolean} overdue 过期时间(s)/是否过期
    */
-  constructor(name: string, overdue = false) {
+  constructor(name: string, overdue?: number | boolean) {
     if (name) {
       this.name = name;
     }
@@ -25,7 +25,7 @@ export default class CacheTile {
 
     this.init();
   }
-
+  // 初始化
   async init(): Promise<CacheDataMap> {
     const data = await this.checkDatabase();
     if (data) {
@@ -33,11 +33,11 @@ export default class CacheTile {
     }
     return Promise.resolve(this.cacheMap);
   }
-
+  // 通过key获取map数据
   getTile(key: string): string | undefined {
     return this.cacheMap.get(key);
   }
-
+  // 设置map数据
   setTile(key: string, value: string, upload = false):void {
     const { cacheMap } = this;
     if (upload) {
@@ -50,6 +50,7 @@ export default class CacheTile {
 
     this.updateDatabase();
   }
+  // 检查并获取数据
   async checkDatabase(): Promise<CacheDataMap | null> {
     const data = await get(this.name);
     const _time = new Date().valueOf() / 1000;
@@ -62,7 +63,7 @@ export default class CacheTile {
     }
     return null;
   }
-
+  // 更新数据
   async updateDatabase(data = this.cacheMap): Promise<void> {
     const { name } = this;
     await set(name, {

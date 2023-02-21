@@ -13,10 +13,9 @@
     "canvas",
     "typescript"
   ],
-  "type": "module",
   "source": "src/index.ts",
+  "unpkg": "dist/leaflet-color-cache-tile.js",
   "main": "dist/leaflet-color-cache-tile.cjs",
-  "unpkg": "dist/leaflet-color-cache-tile.umd.js",
   "module": "dist/leaflet-color-cache-tile.module.js",
   "types": "dist/leaflet-color-cache-tile.d.ts",
   "author": "wang k",
