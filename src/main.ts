@@ -115,7 +115,7 @@ const ColorCacheTile = L.TileLayer.extend({
     let _tileImage = tileImage;
     let newTileImage = new Image();
     newTileImage.crossOrigin = 'Anonymous';
-    newTileImage.src = _img.src;
+    newTileImage.src = _tileImage.src;
     newTileImage.onload = () => {
       let canvas = document.createElement('canvas');
 
@@ -162,10 +162,10 @@ const ColorCacheTile = L.TileLayer.extend({
         }
       }
       ctx.putImageData(imageData, 0, 0);
-      _img.setAttribute('color-cache-loaded', 'true');
+      _tileImage.setAttribute('color-cache-loaded', 'true');
       const _src = canvas.toDataURL('image/webp', 0.8);
 
-      _img.src = _src;
+      _tileImage.src = _src;
 
       const _colorizeName = this.options.cacheSet({}).name || CacheTile.name;
       _CacheTileObj[_colorizeName].setTile(coordsName, _src);

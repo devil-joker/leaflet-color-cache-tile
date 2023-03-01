@@ -4,6 +4,7 @@ specifiers:
   '@types/leaflet': ^1.9.0
   idb-keyval: ^6.2.0
   microbundle: ^0.15.1
+  rimraf: ^4.1.2
   typescript: ^4.9.5
   vite: ^4.1.2
 
@@ -13,6 +14,7 @@ dependencies:
 devDependencies:
   '@types/leaflet': 1.9.0
   microbundle: 0.15.1
+  rimraf: 4.1.2
   typescript: 4.9.5
   vite: 4.1.2
 
@@ -3555,6 +3557,12 @@ packages:
       is-core-module: 2.11.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
+    dev: true
+
+  /rimraf/4.1.2:
+    resolution: {integrity: sha512-BlIbgFryTbw3Dz6hyoWFhKk+unCcHMSkZGrTFVAx2WmttdBSonsdtRlwiuTbDqTKr+UlXIUqJVS4QT5tUzGENQ==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /rollup-plugin-bundle-size/1.0.3:
