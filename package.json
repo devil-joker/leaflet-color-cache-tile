@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build:map": "microbundle watch",
-    "build": "rimraf dist/ && microbundle",
-    "publishPre": "pnpm version patch && pnpm build && npm publish"
+    "build": "rimraf dist/ && microbundle --no-sourcemap",
+    "publishPre": "pnpm version patch && pnpm build"
   },
   "repository": {
     "type": "git",
