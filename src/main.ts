@@ -87,9 +87,9 @@ const ColorCacheTile = L.TileLayer.extend({
     // 异步处理数据
     if (!catchBaseImg) {
       tile.hidden = true;
-      tile.src = '';
+      // 默认直接请求加载，避免重复初始化缓存数据导致加载阻塞
+      tile.src = this.getTileUrl(coords);
       _CacheTileObj[_colorizeName].init().then((v) => {
-        tile.src = this.getTileUrl(coords);
         if (v.size) {
           const _catchBaseImg = _CacheTileObj[_colorizeName].getTile(tileCacheName);
           if (_catchBaseImg) {
